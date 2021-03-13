@@ -1,21 +1,39 @@
-  
-package src;
+package baitap1;
+
 import java.util.Scanner;
 public class bai3 {
     public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("nhap ten cua ban: ");
-        String ten = sc.next(); 
-        System.out.println("nhap nam sinh cua ban: ");
-        int ns = sc.nextInt();
-        int tuoi = 2020 - ns;
-        if(tuoi < 16){
-            System.out.println("ban " +ten + " o do tuoi vi thanh nien");
-        }else if(tuoi >=16){
-            System.out.println("ban " +ten +" o do tuoi truong thanh");
-        }else if(tuoi >= 18){
-            System.out.println("ban " +ten +" o do tuoi gia");
+        matran mt = new matran();
+        mt.Nhap();
+        mt.Hienthi();
+    }
+    
+}
+class matran{
+    private int i, j, m,n ,k;
+    private static int [][] M= new int [9][9];
+    
+    public void Hienthi(){
+        for(i=0;i<n;i++){
+            for(j=0;j<m;j++){
+                System.out.println([i][j] +"");
+            }
+            System.out.println();
         }
-        sc.close();
+    
+    }
+    
+    public void Nhap(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Nhập số hàng: ");
+        n = scan.nextInt();
+        System.out.println("Nhập số cột");
+        m = scan.nextInt();
+        for(i=0;i<n;i++){
+            for(j=0;j<m;j++){
+                System.out.println("Nhập ma trận M [" +i+"]["+j+"]=");
+                M[i][j] =scan.nextInt();
+            }
+        }
     }
 }

@@ -1,41 +1,55 @@
-package src;
-import java.util.Scanner;
+package baitap1;
 
+import java.util.Scanner;
 public class bai4 {
     public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("nhap vao mot so: ");
-        int month = sc.nextInt();
-        if(month<=0||month>12){
-            System.out.println("thang khong hop le");
-        }
-            switch(month){
-                case 1:System.out.println("thang mot");
-                break;
-                case 2:System.out.println("thang hai");
-                break;
-                case 3:System.out.println("thang ba");
-                break;
-                case 4:System.out.println("thang tu");
-                break;
-                case 5:System.out.println("thang nam");
-                break;
-                case 6:System.out.println("thang sau");
-                break;
-                case 7:System.out.println("thang bay");
-                break;
-                case 8:System.out.println("thang tam");
-                break;
-                case 9:System.out.println("thang chin");
-                break;
-                case 10:System.out.println("thang muoi");
-                break;
-                case 11:System.out.println("thang muoi mot");
-                break;
-                case 12:System.out.println("thang muoi hai");
-                break;
-            }
-        sc.close();
+        SinhVien sv = new SinhVien();
+        sv.nhap();
+        sv.xuat();
+        sv.tinhDiemtb();
     }
-   
+}
+class SinhVien{
+    
+    String hoten, gioitinh,lop;
+    int ngaysinh;
+    float diemtoan, diemly, diemhoa, dtb;
+    
+    void nhap(){
+        Scanner scan = new Scanner(System.in);
+       
+        System.out.println("Nhập họ và tên là:");
+        hoten = scan.nextLine();
+        
+        System.out.println("Nhập ngày sinh là:");
+        ngaysinh = scan.nextInt();
+       
+        System.out.println("Nhập vào giới tính là:");
+        gioitinh = scan.nextLine();
+       
+        System.out.println("Nhập lớp là:");
+        lop = scan.nextLine();
+        
+        System.out.println("Nhập vào điểm toán là: ");
+        diemtoan = scan.nextInt();
+        
+        System.out.println("Nhập vào điểm lý là: ");
+        diemly = scan.nextInt();
+        
+        System.out.println("Nhập vào điểm hóa là: ");
+        diemhoa = scan.nextInt();
+    }
+    void tinhDiemtb(){
+        dtb = (diemtoan+diemhoa+diemly)/3;
+        System.out.println("Điểm trung bình là: "+dtb);
+    }
+    void xuat(){
+        System.out.println("Họ tên sinh viên là: "+hoten);
+        System.out.println("Ngày sinh của sinh viên là: "+ngaysinh);
+        System.out.println("Giới tính của sinh viên là: "+gioitinh);
+        System.out.println("Lớp của sinh viên là: "+lop);
+        System.out.println("Điểm toán của sinh viên là: "+diemtoan);
+        System.out.println("Điểm lý của sinh viên là:" +diemly);
+        System.out.println("Điểm hóa của sinh viên là: "+diemhoa);
+        }
 }
